@@ -145,6 +145,7 @@ classes:
 
   Study:
     is_a: NamedThing
+    description: "A study groups related experiments and data, typically focused on a specific biological question or hypothesis. Studies organize samples, preparations, experiments, workflows, and data products into a coherent research unit."
     attributes:
       samples:
         range: Sample
@@ -241,7 +242,7 @@ classes:
         description: "Date of sample preparation"
         range: string
       operator_id:
-        description: "Person who performed the preparation"
+        description: "Identifier or name of the experiment operator (person who performed the preparation). Use a unique lab login, ORCID, or full name as appropriate."
         range: string
       protocol_description:
         description: "Detailed protocol description"
@@ -367,7 +368,7 @@ classes:
         description: "Date of the experiment"
         range: string
       operator_id:
-        description: "Person who performed the experiment"
+        description: "Identifier or name of the experiment operator (person who performed the experiment). Use a unique lab login, ORCID, or full name as appropriate."
         range: string
       technique:
         description: "Technique used for data collection"
@@ -619,8 +620,10 @@ classes:
 
   ImageFeature:
     is_a: AttributeGroup
+    description: "A feature or region of interest identified in an image, typically annotated with ontology terms (e.g., cellular compartments, labeled structures, or detected spots). Used for semantic annotation and downstream analysis."
     attributes:
       terms:
+        description: "Ontology terms describing the feature or region of interest."
         range: OntologyTerm
 
   OntologyTerm:
